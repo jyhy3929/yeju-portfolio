@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THEME SONG | 예주의 AI & XR 스튜디오</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  .song-scene {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .song-scene img {
+    width: 100%;
+    display: block;
+  }
+  .song-scene .play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 24px rgba(180,150,130,0.35);
+    transition: transform .2s ease;
+    z-index: 2;
+  }
+  .song-scene:hover .play-btn { transform: translate(-50%, -50%) scale(1.08); }
+  .song-scene .play-btn svg { width: 24px; height: 24px; }
+  .song-scene .play-btn svg#icon-play { margin-left: 3px; }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-brand">
+      <span class="brand-icon">🎨</span>
+      예주의 AI & XR 스튜디오
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">🏠 홈</a></li>
+      <li><a href="image.html">🖼️ 이미지</a></li>
+      <li><a href="video.html">▶️ 영상</a></li>
+      <li><a href="object.html">📦 오브젝트</a></li>
+      <li><a href="vr-space.html">🥽 VR 전시</a></li>
+      <li><a href="theme-song.html" class="active">🎵 테마송</a></li>
+      <li><a href="mind-map.html">💗 마음지도</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero container">
+  <span class="cat-tag tag-song">🎵 THEME SONG</span>
+  <p style="margin-top:48px;">수노(Suno)를 활용해 포근한 피아노와 어쿠스틱 기타 선율 위에 다정한 여성 보컬과 풍성한 화음을 얹어 완성한 따뜻한 인디 팝 곡입니다.</p>
+</section>
+
+<section class="container">
+  <div class="detail-media" style="margin-bottom:10px;max-width:900px;margin-left:auto;margin-right:auto;">
+    <div class="song-scene" id="song-toggle">
+      <img src="../assets/theme-song-illustration.jpg" alt="오후의 햇살 한 조각">
+      <div class="play-btn">
+        <svg id="icon-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z" fill="#FF8FAB"/></svg>
+        <svg id="icon-pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none;"><rect x="5" y="4" width="5" height="16" rx="1.5" fill="#FF8FAB"/><rect x="14" y="4" width="5" height="16" rx="1.5" fill="#FF8FAB"/></svg>
+      </div>
+    </div>
+  </div>
+  <h3 style="text-align:center;margin:0 0 6px;font-size:17px;">오후의 햇살 한 조각</h3>
+  <p style="text-align:center;color:var(--text-sub);font-size:14px;max-width:520px;margin:0 auto 24px;line-height:1.65;">
+    잔잔한 종소리와 손뼉 소리가 어우러진 밝고 친근한 멜로디를 통해, 마음에 햇살 같은 온기와 아늑한 쉼을 선물하고자 했습니다. 위 이미지를 누르면 재생됩니다.
+  </p>
+  <audio id="moonlit-audio" src="../assets/little-paper-sun.mp3"></audio>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <span>© 2026 예주 AI & XR 스튜디오. All rights reserved.</span>
+    <span>"작은 아이디어가 누군가의 마음을 따뜻하게 할 수 있기를 바랍니다." <span class="heart">♥</span></span>
+  </div>
+</footer>
+
+<script>
+  var moonlitAudio = document.getElementById('moonlit-audio');
+  var songToggle = document.getElementById('song-toggle');
+  var iconPlay = document.getElementById('icon-play');
+  var iconPause = document.getElementById('icon-pause');
+
+  songToggle.addEventListener('click', function () {
+    if (moonlitAudio.paused) {
+      moonlitAudio.play();
+      iconPlay.style.display = 'none';
+      iconPause.style.display = 'block';
+    } else {
+      moonlitAudio.pause();
+      iconPlay.style.display = 'block';
+      iconPause.style.display = 'none';
+    }
+  });
+
+  moonlitAudio.addEventListener('ended', function () {
+    iconPlay.style.display = 'block';
+    iconPause.style.display = 'none';
+  });
+
+  // 메뉴에서 이 페이지로 들어오면 자동 재생을 시도합니다.
+  // (브라

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OBJECT | 예주의 AI & XR 스튜디오</title>
+<link rel="stylesheet" href="../style.css">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+<style>
+  .obj-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 22px;
+    padding: 10px 0 70px;
+  }
+  .obj-card {
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--shadow-clay);
+    overflow: hidden;
+    text-align: center;
+  }
+  .obj-card model-viewer {
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(160deg, #FFF3E0, #FFE8EF);
+    --poster-color: transparent;
+  }
+  .obj-card .obj-label {
+    padding: 14px 10px 18px;
+    font-weight: 800;
+    font-size: 14px;
+  }
+  @media (max-width: 1100px) {
+    .obj-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 860px) {
+    .obj-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .obj-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="../index.html" class="nav-brand">
+      <span class="brand-icon">🎨</span>
+      예주의 AI & XR 스튜디오
+    </a>
+    <ul class="nav-links">
+      <li><a href="../index.html">🏠 홈</a></li>
+      <li><a href="image.html">🖼️ 이미지</a></li>
+      <li><a href="video.html">▶️ 영상</a></li>
+      <li><a href="object.html" class="active">📦 오브젝트</a></li>
+      <li><a href="vr-space.html">🥽 VR 전시</a></li>
+      <li><a href="theme-song.html">🎵 테마송</a></li>
+      <li><a href="mind-map.html">💗 마음지도</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="page-hero container">
+  <span class="cat-tag tag-object">💎 OBJECT</span>
+  <p style="margin-top:48px;">메시(Meshy)를 활용하여 입체적인 디지털 자산으로 구현한 3D 오브젝트 프로젝트입니다. 정성껏 빚어낸 한옥 조각과 아기자기한 소품들을 직접 돌려보며, 기술이 만들어낸 다채로운 입체 예술로 표현해보았습니다.</p>
+</section>
+
+<section class="container container-wide">
+  <div class="obj-grid">
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/building.glb" alt="한옥 몸채" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">한옥 몸채</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/hanbok-girl.glb" alt="한복 소녀 캐릭터" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">한복 소녀 캐릭터</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/lantern.glb" alt="청사초롱" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">청사초롱</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/flowerpot.glb" alt="화분" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">화분</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/garden-swing.glb" alt="나무 그네" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">나무 그네</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/teatable.glb" alt="찻상" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">찻상</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/shelf.glb" alt="선반장" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">선반장</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/sign.glb" alt="간판" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">간판</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/mini-korean.glb" alt="미니어처 한국 소품" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">미니어처 한국 소품</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/mini-wooden-1.glb" alt="미니어처 우드 소품 1" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">미니어처 우드 소품 1</div>
+    </div>
+
+    <div class="obj-card">
+      <model-viewer src="../assets/models/mini-wooden-2.glb" alt="미니어처 우드 소품 2" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      <div class="obj-label">미니어처 우드 소품 2</div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <span>© 2026 예주 AI & XR 스튜디오. All rights reserved.</span>
+    <span>"작은 아이디어가 누군가의 마음을 따뜻하게 할 수 있기를 바랍니다." <span cla
