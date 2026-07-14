@@ -33,7 +33,7 @@
 
 <section class="container">
   <div class="detail-media" style="margin-bottom:10px;max-width:360px;margin-left:auto;margin-right:auto;">
-    <video id="figure-haul-video" src="../assets/figure-haul.mp4" controls poster="" style="width:100%;display:block;"></video>
+    <video id="figure-haul-video" src="../assets/figure-haul.mp4" controls autoplay muted playsinline webkit-playsinline poster="" style="width:100%;display:block;"></video>
   </div>
   <div style="max-width:480px;margin:0 auto 24px;text-align:center;">
     <h3 style="margin:0 0 6px;font-size:17px;">나의 작은 친구들</h3>
@@ -54,12 +54,13 @@
 <script>
   // 메뉴에서 이 페이지로 들어오면 자동 재생을 시도합니다.
   var figureHaulVideo = document.getElementById('figure-haul-video');
+  figureHaulVideo.muted = true;
   var playPromise = figureHaulVideo.play();
   if (playPromise !== undefined) {
     playPromise.catch(function () {
-      // 소리 자동재생이 브라우저에 막히면 무음으로 대신 재생합니다.
-      figureHaulVideo.muted = true;
-      figureHaulVideo.play();
+      // 혹시 재생이 막히면 로드 후 다시 시도합니다.
+      figureHaulVideo.load();
+      figureHaulVideo.play().catch(function () {});
     });
   }
 </script>

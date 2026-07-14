@@ -37,7 +37,7 @@
   <div class="works-grid" style="grid-template-columns: 1fr; display:flex; flex-direction:column; flex:1;">
     <div class="work-card" style="cursor:default; flex:1; display:flex; flex-direction:column;">
       <div class="work-thumb" style="width:100%; height:44vh; flex:none; display:flex; align-items:center; justify-content:center; overflow:hidden; background:var(--bg-cream-2);">
-        <video id="mindmap-video" src="../assets/mindmap-reveal.mp4" controls loop poster="../assets/mindmap-bgt.png" style="width:100%;height:100%;object-fit:contain;display:block;"></video>
+        <video id="mindmap-video" src="../assets/mindmap-reveal.mp4" controls loop autoplay muted playsinline webkit-playsinline poster="../assets/mindmap-bgt.png" style="width:100%;height:100%;object-fit:contain;display:block;"></video>
       </div>
 
       <div class="work-body vision-block" style="text-align:left; border-top:1px solid rgba(180,150,130,0.15); margin-top:6px; flex:1; display:flex; flex-direction:column; justify-content:center;">
@@ -54,4 +54,35 @@
           </div>
           <div>
             <h4 style="font-size:20px; margin:0 0 8px;">확장가능성 · 시리즈화와 부가 콘텐츠</h4>
-            <p style="font-size:17px; line-height:1.55; margin:0;">시험 준비와 심리검사 종류, 일반 심리 검사들도 시리즈화 할 수 있고 원데이 클래스, 기관협업, 전자책 등 하나씩 쌓이다 보면 '임상심리 지식으로 만드는 AI 콘텐츠'라는 저만의 색깔이 분명해지며 자연스럽게 부가 콘텐츠로 확장할 수 있다고
+            <p style="font-size:17px; line-height:1.55; margin:0;">시험 준비와 심리검사 종류, 일반 심리 검사들도 시리즈화 할 수 있고 원데이 클래스, 기관협업, 전자책 등 하나씩 쌓이다 보면 '임상심리 지식으로 만드는 AI 콘텐츠'라는 저만의 색깔이 분명해지며 자연스럽게 부가 콘텐츠로 확장할 수 있다고 생각합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <span>© 2026 예주 AI & XR 스튜디오. All rights reserved.</span>
+    <span>"작은 아이디어가 누군가의 마음을 따뜻하게 할 수 있기를 바랍니다." <span class="heart">♥</span></span>
+  </div>
+</footer>
+
+<script>
+  // 메뉴에서 이 페이지로 들어오면 자동 재생을 시도합니다.
+  var mindmapVideo = document.getElementById('mindmap-video');
+  mindmapVideo.muted = true;
+  var playPromise = mindmapVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function () {
+      // 혹시 재생이 막히면 로드 후 다시 시도합니다.
+      mindmapVideo.load();
+      mindmapVideo.play().catch(function () {});
+    });
+  }
+</script>
+
+</body>
+</html>

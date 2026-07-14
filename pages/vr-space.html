@@ -33,7 +33,7 @@
 
 <section class="container">
   <div class="detail-media" style="margin-bottom:10px;max-width:900px;margin-left:auto;margin-right:auto;">
-    <video id="vr-space-video" src="../assets/vr-space.mp4" controls poster="" style="width:100%;display:block;"></video>
+    <video id="vr-space-video" src="../assets/vr-space.mp4" controls loop autoplay muted playsinline webkit-playsinline poster="" style="width:100%;display:block;"></video>
   </div>
   <h3 style="text-align:center;margin:0 0 6px;font-size:17px;">가상 공간 속 아늑한 한옥 마을</h3>
   <p style="text-align:center;color:var(--text-sub);font-size:14px;max-width:520px;margin:0 auto 24px;line-height:1.65;">
@@ -43,4 +43,24 @@
 
 <footer class="footer">
   <div class="container">
-    <span
+    <span>© 2026 예주 AI & XR 스튜디오. All rights reserved.</span>
+    <span>"작은 아이디어가 누군가의 마음을 따뜻하게 할 수 있기를 바랍니다." <span class="heart">♥</span></span>
+  </div>
+</footer>
+
+<script>
+  // 메뉴에서 이 페이지로 들어오면 자동 재생을 시도합니다.
+  var vrSpaceVideo = document.getElementById('vr-space-video');
+  vrSpaceVideo.muted = true;
+  var playPromise = vrSpaceVideo.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(function () {
+      // 혹시 재생이 막히면 로드 후 다시 시도합니다.
+      vrSpaceVideo.load();
+      vrSpaceVideo.play().catch(function () {});
+    });
+  }
+</script>
+
+</body>
+</html>
